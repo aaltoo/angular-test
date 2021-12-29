@@ -13,6 +13,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './state/counter.reducer';
+
 @NgModule({
   declarations: [
     AppComponent,
