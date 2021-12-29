@@ -9,6 +9,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InputFieldComponent } from './components/input-field/input-field.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,15 @@ import { InputFieldComponent } from './components/input-field/input-field.compon
     TasksComponent,
     TaskItemComponent,
     InputFieldComponent,
+    BlogComponent,
+    NavbarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
