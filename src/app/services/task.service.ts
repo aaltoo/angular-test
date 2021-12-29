@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../Task';
-import { TASKS } from '../mock-tasks';
 import { Observable, of } from 'rxjs';
 import { ApiHttpService } from './api-http.service';
 
@@ -8,15 +7,21 @@ import { ApiHttpService } from './api-http.service';
   providedIn: 'root',
 })
 export class TaskService {
-  constructor(apiHttpService: ApiHttpService) {}
+  constructor(private apiHttpService: ApiHttpService) {}
 
-  getTasks(): Observable<Task[]> {
-    const tasks = of(ApiHttpService.get());
-    return tasks;
+  getTasks() {
+    return this.apiHttpService.get('/');
   }
 
-  addTask(task: Task): Observable<Task[]> {
-    const tasks = of([...TASKS, task]);
-    return tasks;
+  addTask(task: Task) {
+    return this.apiHttpService.post('/', task);
+  }
+
+  editTask(task: Task, id: number) {
+    return this.apiHttpService.put(`/${id}`, task);
+  }
+
+  deleteTask(id: number) {
+    return this.apiHttpService.delete(`/${id}`);
   }
 }

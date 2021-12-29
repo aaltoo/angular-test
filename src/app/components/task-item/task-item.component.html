@@ -1,4 +1,4 @@
-<div [title]="task!.day" class="task">
-  <h3>task {{task!.text}} <fa-icon [ngStyle]="{'color' : 'red'}" [icon]="faTimes"></fa-icon></h3>
-  <p>{{task!.day}}</p>
+<div [title]="task?.text" class="task">
+  <h3>task {{task?.heading}} <fa-icon [ngStyle]="{'color' : 'red'}" [icon]="faTimes"></fa-icon></h3>
+  <p>{{task!.text}}</p>
 </div>
