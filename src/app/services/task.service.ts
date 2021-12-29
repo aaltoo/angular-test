@@ -13,4 +13,9 @@ export class TaskService {
     const tasks = of(TASKS);
     return tasks;
   }
+
+  addTask(task: Task): Observable<Task[]> {
+    const tasks = of([...TASKS, task]);
+    return tasks;
+  }
 }
