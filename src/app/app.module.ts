@@ -12,7 +12,7 @@ import { InputFieldComponent } from './components/input-field/input-field.compon
 import { BlogComponent } from './components/blog/blog.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StoreModule } from '@ngrx/store';
-
+import { counterReducer } from './state/counter.reducer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,7 @@ import { StoreModule } from '@ngrx/store';
     AppRoutingModule,
     FontAwesomeModule,
     AppRoutingModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ count: counterReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent],
