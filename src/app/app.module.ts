@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InputFieldComponent } from './components/input-field/input-field.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppRoutingModule,
     FontAwesomeModule,
     AppRoutingModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],
