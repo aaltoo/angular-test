@@ -1,3 +1,9 @@
-<header class="header">
-  <h1>header works</h1>
+<header class="w-100 h-12 bg-slate-400 flex justify-between items-center px-10">
+  <h1 class="font-bold">LK</h1>
+  <div class="flex items-center">
+    <div class="h-8 w-8 bg-slate-300 rounded-full"></div>
+    <a *ngIf="authorized" href="/login">
+      <h1 class="ml-4 font-medium">Войти</h1>
+    </a>
+  </div>
 </header>
