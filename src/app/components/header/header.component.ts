@@ -8,5 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   constructor() {}
   authorized = true;
+  darkMode = true;
   ngOnInit(): void {}
 }
