@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'angular-test';
-  number: number = 0;
-  increment = () => {
-    this.number++;
-  };
 }
