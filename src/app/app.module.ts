@@ -11,12 +11,14 @@ import { metaReducers, reducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { EffectsModule } from '@ngrx/effects';
+import { DropdownComponent } from './components/header/dropdown/dropdown.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProfileComponent,
     SidebarComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,

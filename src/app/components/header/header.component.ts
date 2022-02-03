@@ -11,15 +11,13 @@ import { async } from 'rxjs';
 export class HeaderComponent implements OnInit {
   authorized = true;
   darkMode$ = this.store.select(darkModeSelector);
-  darkModeAsync: boolean | undefined;
+  dropDownActive = false;
   darkModeFromLocalStorage: string | null = null;
 
   constructor(private store: Store) {}
 
-  toggleDarkMode() {
-    this.store.dispatch(toggle());
-    this.darkMode$.subscribe((data) => (this.darkModeAsync = data));
-    localStorage.setItem('darkMode', String(this.darkModeAsync));
+  setDropDown() {
+    this.dropDownActive = !this.dropDownActive;
   }
 
   ngOnInit(): void {

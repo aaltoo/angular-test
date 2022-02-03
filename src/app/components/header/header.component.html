@@ -7,14 +7,15 @@
       class="font-bold dark:text-white"
       [ngClass]="(darkMode$ | async) ? 'text-white' : 'text-black'"
     >LK</h1>
-    <div class="flex items-center">
-      <div class="h-8 w-8 bg-slate-300 rounded-full"></div>
-      <a *ngIf="authorized" href="/login">
+    <div class="flex items-center h-full" (click)="setDropDown()">
+      <div class="h-8 w-8 bg-cover bg-[url('https://sun1-95.userapi.com/s/v1/ig2/rjDKZvi1VYS33NEAS7JRV2i1Yf_Q50xrYU3WLdli6waBRaYM0MZPGIhizGMoud6rWYoQ4DkDHrnB_PAijA8j2yvu.jpg?size=200x299&quality=95&crop=70,26,850,1274&ava=1')] rounded-full"></div>
+      <app-dropdown *ngIf="dropDownActive"></app-dropdown>
+      <a *ngIf="!authorized" href="/login">
         <h1
           class="ml-4 font-medium dark:text-white"
         >Войти</h1>
       </a>
-      <button (click)="toggleDarkMode()">toggle</button>
+      <!-- <button (click)="toggleDarkMode()">toggle</button> -->
     </div>
   </nav>
 </header>
