@@ -1,19 +1,19 @@
 <header 
   class="w-screen h-12 flex justify-center"
-  [ngClass]="darkMode$ ? 'bg-slate-800' : 'bg-white'"
+  [ngClass]="(darkMode$ | async) ? 'bg-slate-800' : 'bg-white'"
 >
   <nav class="flex w-6/12 justify-between items-center">
     <h1
       class="font-bold"
-      [ngClass]="darkMode$ ? 'text-white' : 'text-black'"
+      [ngClass]="(darkMode$ | async) ? 'text-white' : 'text-black'"
     >LK</h1>
     <div class="flex items-center">
       <div class="h-8 w-8 bg-slate-300 rounded-full"></div>
       <a *ngIf="authorized" href="/login">
         <h1
           class="ml-4 font-medium"
-          [ngClass]="darkMode$ ? 'text-white' : 'text-black'"
-        >Войти {{darkMode$}}</h1>
+          [ngClass]="(darkMode$ | async) ? 'text-white' : 'text-black'"
+        >Войти</h1>
       </a>
       <button (click)="toggleDarkMode()">toggle</button>
     </div>

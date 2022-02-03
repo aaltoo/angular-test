@@ -1,7 +1,8 @@
+import { darkModeSelector } from './../../reducers/dark-mode';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { toggleDarkMode } from 'src/app/state/actions/dark-mode.actions';
+import { Observable, take } from 'rxjs';
+import { select, Store } from '@ngrx/store';
+import { toggle } from 'src/app/state/actions/dark-mode.actions';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,14 +10,13 @@ import { toggleDarkMode } from 'src/app/state/actions/dark-mode.actions';
 })
 export class HeaderComponent implements OnInit {
   authorized = true;
-  darkMode$: Observable<boolean>;
-  constructor(private store: Store<{ darkMode: boolean }>) {
-    this.darkMode$ = this.store.select('darkMode');
-    console.log(this.darkMode$);
-  }
+  darkMode$ = this.store.select(darkModeSelector);
+
+  constructor(private store: Store) {}
 
   toggleDarkMode() {
-    this.store.dispatch(toggleDarkMode());
+    this.store.dispatch(toggle());
+    console.log(this.darkMode$);
   }
 
   ngOnInit(): void {}

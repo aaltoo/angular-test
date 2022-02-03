@@ -1,3 +1,4 @@
+import { AppEffects } from './app.effects';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -6,7 +7,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { StoreModule } from '@ngrx/store';
-import { darkModeReducer } from './state/reducers/dark-mode.reducer';
+import { metaReducers, reducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { EffectsModule } from '@ngrx/effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +21,14 @@ import { darkModeReducer } from './state/reducers/dark-mode.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ darkMode: darkModeReducer }),
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    EffectsModule.forRoot([AppEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],

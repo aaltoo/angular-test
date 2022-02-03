@@ -1,3 +1,3 @@
 import { createAction } from '@ngrx/store';
 
-export const toggleDarkMode = createAction('[Dark Mode] Toggle');
+export const toggle = createAction('[Dark Mode] Toggle');
