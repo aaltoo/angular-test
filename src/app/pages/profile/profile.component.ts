@@ -10,7 +10,6 @@ import { getHeadOfArray } from 'src/helpers/getHeadOfArray';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  darkMode$ = this.store.select(darkModeSelector);
   friends = [
     {
       name: 'Test',
@@ -52,7 +51,7 @@ export class ProfileComponent implements OnInit {
   friendsHead: Friend[] = getHeadOfArray(this.friends, 6);
   input = '';
   posts: string[] = [];
-  constructor(private store: Store) {}
+  constructor() {}
   ngOnInit(): void {}
 
   onPost() {

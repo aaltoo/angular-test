@@ -1,7 +1,8 @@
-<div class="flex mt-3 bg-blue-700">
-  <div class="w-full">
-    <section>
-      <input class=""/>
-    </section>
+<div>
+  <div class="flex bg-white dark:bg-slate-900 flex-col rounded-t">
+    <div *ngFor="let friend of friends" class="flex m-3">
+      <img class="rounded-full w-16 h-16" src="https://sun1-24.userapi.com/s/v1/ig2/N9b4wbeAFY1u_MVIga11PyvotgPp8nS2smW8X25jg4l1u7lfg8TT18SiC9glDZpPWvMQSnFh4kt_ZJtrO4iRIYVX.jpg?size=100x100&quality=96&crop=496,263,297,297&ava=1" alt="">
+      <h1 class="dark:text-white">{{friend.name}}</h1>
+    </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
-<div class="flex justify-end mt-3" [ngClass]="(darkMode$ | async) ? 'dark' : ''">
-  <div class="w-4/12 mr-3">
+<div class="flex justify-end items-end flex-col md:flex-row md:items-start">
+  <div class="hidden xl:flex flex-col w-4/12 mr-3">
     <section class="mb-3 dark:bg-slate-900">
       <img class="p-3" src="https://sun9-61.userapi.com/impg/Vl2Jlml2VycHoP2MnK9K85yoCsAhDkVKVwrW7g/-zCTSlHl1E4.jpg?size=920x1300&quality=95&sign=3c4e50df9d107e26b92ac27c31b76a8a&type=album" alt="">
     </section>
@@ -7,13 +7,13 @@
       <p class="dark:text-white mb-2">Друзья {{friends.length}}</p>
       <div class="flex justify-around flex-wrap">
         <div *ngFor="let friend of friendsHead" class="flex items-center flex-col">
-          <img class="w-12 h-12 object-cover rounded-full" src="https://sun9-61.userapi.com/impg/Vl2Jlml2VycHoP2MnK9K85yoCsAhDkVKVwrW7g/-zCTSlHl1E4.jpg?size=920x1300&quality=95&sign=3c4e50df9d107e26b92ac27c31b76a8a&type=album" alt="">
-          <p>{{friend.name}}</p>
+          <img class="w-8 xl:w-10 2xl:w-12 h-8 xl:h-10 2xl:h-12 xl:m-1 2xl:m-1.5 object-cover rounded-full" src="https://sun9-61.userapi.com/impg/Vl2Jlml2VycHoP2MnK9K85yoCsAhDkVKVwrW7g/-zCTSlHl1E4.jpg?size=920x1300&quality=95&sign=3c4e50df9d107e26b92ac27c31b76a8a&type=album" alt="">
+          <p class="text-xs xl:text-sm 2xl:text-base dark:text-white">{{friend.name}}</p>
         </div>
       </div>
     </section>
   </div>
-  <div class="w-8/12">
+  <div class="w-full xl:w-8/12">
     <section class="p-3 mb-3 dark:bg-slate-900">
       <h1 class="font-medium dark:text-white">Стас Павлов</h1>
       <p class="dark:text-white">we have everything besides freedom</p>

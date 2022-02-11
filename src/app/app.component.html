@@ -4,9 +4,9 @@
   [ngClass]="(darkMode$ | async)? 'bg-slate-800' : 'bg-slate-200'"
 >
   <app-header></app-header>
-  <div class="w-6/12 flex">
-    <app-sidebar class="w-2/12"></app-sidebar>
-    <div class="w-10/12">
+  <div class="w-11/12 lg:w-6/12 flex">
+    <app-sidebar class="w-3/12 xl:w-2/12 hidden sm:block"></app-sidebar>
+    <div class="w-full sm:w-9/12 xl:w-10/12" [ngClass]="(darkMode$ | async) ? 'dark' : ''">
       <router-outlet></router-outlet>
     </div>
   </div>
