@@ -9,7 +9,24 @@ import { darkModeSelector } from 'src/app/reducers/dark-mode';
 })
 export class SidebarComponent implements OnInit {
   darkMode$ = this.store.select(darkModeSelector);
-
+  navLinks = [
+    {
+      name: 'Моя страница',
+      path: 'profile',
+    },
+    {
+      name: 'Мои друзья',
+      path: 'friends',
+    },
+    {
+      name: 'Новости',
+      path: 'feed',
+    },
+    {
+      name: 'Сообщения',
+      path: 'messages',
+    },
+  ];
   constructor(private store: Store) {}
 
   ngOnInit(): void {}

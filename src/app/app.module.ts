@@ -12,6 +12,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { DropdownComponent } from './components/header/dropdown/dropdown.component';
+import { FeedComponent } from './components/feed/feed.component';
+import { CommonModule } from '@angular/common';
+import { FriendsComponent } from './components/friends/friends.component';
+import { MessagesComponent } from './components/messages/messages.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +23,14 @@ import { DropdownComponent } from './components/header/dropdown/dropdown.compone
     ProfileComponent,
     SidebarComponent,
     DropdownComponent,
+    FeedComponent,
+    FriendsComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
     }),
