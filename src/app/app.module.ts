@@ -16,6 +16,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { CommonModule } from '@angular/common';
 import { FriendsComponent } from './components/friends/friends.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { MessagesComponent } from './components/messages/messages.component';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    FormsModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
     }),

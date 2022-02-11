@@ -16,8 +16,15 @@
         <h1 class="dark:text-white">yo</h1>
       </div>
     </section>
-    <section class="p-3 dark:bg-slate-900 ">
+    <section class="p-3 dark:bg-slate-900">
+        <input class="mb-2 px-1 py-2 outline-none dark:bg-slate-900 dark:caret-white dark:text-white w-full" placeholder="Что нового?" [(ngModel)]="input" />
+        <div class="flex justify-end" *ngIf="input.length">
+          <button class="bg-blue-700 text-white dark:bg-white dark:text-black p-3 rounded-md" (click)="onPost()">Отправить</button>
+        </div>
+    </section>
+    <section class="p-3 mt-3 dark:bg-slate-900" >
       <p class="dark:text-white">Мои записи</p>
+      <p class="dark:text-white" *ngFor="let post of posts">{{post}}</p>
     </section>
   </div>
 </div>
